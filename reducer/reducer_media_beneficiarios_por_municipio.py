@@ -26,4 +26,4 @@ if contagens:
 else:
     media = 0.0
 
-print(f"MEDIA_BENEFICIARIOS_{mun_atual}\t{media:.2f}")
+print(f"MEDIA_BENEFICIARIOS\t{media:.2f}")
