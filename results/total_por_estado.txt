@@ -1,3 +1,13 @@
+========================================================================
+JOB: total_por_estado
+========================================================================
+DESCRIÇÃO: PERGUNTA: Qual foi o valor total pago por estado em um determinado ano? | RESPOSTA: Valor total do Bolsa Família por estado (UF) para o ano de 2015
+EXECUTADO EM: 2025-05-28 10:39:38
+DADOS DE ENTRADA: /user/bedimand/bolsa-familia/csv
+========================================================================
+
+RESULTADOS:
+----------
 AC	55719288.00
 AL	219027202.00
 AM	217300314.00
@@ -25,3 +35,5 @@ SC	61338631.00
 SE	129755111.00
 SP	623980172.00
 TO	69581869.00
+
+========================================================================

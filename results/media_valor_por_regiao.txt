@@ -1,5 +1,17 @@
+========================================================================
+JOB: media_valor_por_regiao
+========================================================================
+DESCRIÇÃO: PERGUNTA: Qual foi o valor médio recebido por família em cada região do país? | RESPOSTA: Valor médio recebido por família em cada região geográfica do Brasil
+EXECUTADO EM: 2025-05-28 09:17:02
+DADOS DE ENTRADA: /user/bedimand/bolsa-familia/csv
+========================================================================
+
+RESULTADOS:
+----------
 Centro-Oeste	447.97
 Nordeste	512.83
 Norte	563.75
 Sudeste	446.66
 Sul	434.77
+
+========================================================================

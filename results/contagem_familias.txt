@@ -1,3 +1,15 @@
+========================================================================
+JOB: contagem_familias
+========================================================================
+DESCRIÇÃO: PERGUNTA: Quantas famílias foram beneficiadas em um determinado período (por ano ou mês)? | RESPOSTA: Contagem de famílias únicas (NIS distintos) por mês de competência
+EXECUTADO EM: 2025-05-28 10:38:14
+DADOS DE ENTRADA: /user/bedimand/bolsa-familia/csv
+========================================================================
+
+RESULTADOS:
+----------
 201505	13732792
 201506	13716766
 201507	13827369
+
+========================================================================

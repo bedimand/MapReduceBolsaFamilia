@@ -41,8 +41,8 @@ HADOOP_HOME="${INSTALL_DIR}/hadoop-${HADOOP_VERSION}"
 JAVA_PACKAGE="openjdk-11-jdk"
 
 # ==== 1b. Variáveis HDFS e dados ====
-LOCAL_PARQUET_DIR="/home/bedimand/bolsafamilia/parquet"
-HDFS_TARGET_DIR="/user/bedimand/bolsa-familia/parquet"
+LOCAL_CSV_DIR="/home/bedimand/bolsafamilia/data"
+HDFS_TARGET_DIR="/user/bedimand/bolsa-familia/csv"
 HDFS_OUTPUT_DIR="/user/bedimand/bolsa-familia/output"
 
 # ==== 2. Instalação de Pacotes Básicos ====
@@ -149,21 +149,18 @@ hadoop-daemon.sh start datanode;   check_status $? "Start DataNode"
 log "Aguardando HDFS ficar pronto..."
 sleep 10
 
-# ==== 7. Upload dos Parquets para o HDFS ====
+# ==== 7. Upload dos CSVs para o HDFS ====
 log "Criando diretório de destino no HDFS: ${HDFS_TARGET_DIR}"
 hdfs dfs -mkdir -p "${HDFS_TARGET_DIR}"
 check_status $? "Criação de diretório HDFS"
 
-log "Enviando arquivos Parquet para o HDFS, particionando por mês..."
-for pq_file in "${LOCAL_PARQUET_DIR}"/*.parquet; do
-    [ -f "$pq_file" ] || continue
-    fname=$(basename "$pq_file")
-    mes=${fname:0:6}
-    target="${HDFS_TARGET_DIR}/mes=${mes}"
-    hdfs dfs -mkdir -p "${target}"
-    check_status $? "mkdir HDFS ${target}"
-    hdfs dfs -put -f "${pq_file}" "${target}/"
-    check_status $? "put ${fname} → ${target}"
+log "Enviando arquivos CSV sem acentos para o HDFS..."
+for csv_file in "${LOCAL_CSV_DIR}"/*_sem_acentos.csv; do
+    [ -f "$csv_file" ] || continue
+    fname=$(basename "$csv_file")
+    log "Enviando ${fname} para HDFS..."
+    hdfs dfs -put -f "${csv_file}" "${HDFS_TARGET_DIR}/"
+    check_status $? "put ${fname} → ${HDFS_TARGET_DIR}"
 done
 
-log "✅ HDFS resetado e upload de Parquets concluído!"
+log "✅ HDFS resetado e upload de CSVs concluído!"

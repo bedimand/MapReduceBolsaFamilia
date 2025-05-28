@@ -1,1 +1,13 @@
+========================================================================
+JOB: media_beneficiarios_por_municipio
+========================================================================
+DESCRIÇÃO: PERGUNTA: Qual foi a média de beneficiários por município em determinado estado? | RESPOSTA: Média de beneficiários por município APENAS para o estado de SÃO PAULO (SP)
+EXECUTADO EM: 2025-05-28 10:40:12
+DADOS DE ENTRADA: /user/bedimand/bolsa-familia/csv
+========================================================================
+
+RESULTADOS:
+----------
 MEDIA_BENEFICIARIOS	2235.10
+
+========================================================================
